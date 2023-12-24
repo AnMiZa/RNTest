@@ -1,11 +1,45 @@
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {AnimationsScreen} from '@screens';
+import {
+  AnimatedPropsScreen,
+  AnimatedStylesScreen,
+  AnimationsScreen,
+  ModifiersScreen,
+} from '@screens';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {GesturesScreen} from '@screens';
 
-const {Navigator, Screen} = createNativeStackNavigator();
+const {Navigator, Screen} = createMaterialTopTabNavigator();
 export const AnimationsStack = () => {
   return (
-    <Navigator>
-      <Screen name="AnimationsScreen" component={AnimationsScreen} />
+    <Navigator
+      screenOptions={{
+        tabBarItemStyle: {width: 100},
+        tabBarScrollEnabled: true,
+      }}>
+      <Screen
+        name="AnimationsScreen"
+        component={AnimationsScreen}
+        options={{tabBarLabel: 'Home'}}
+      />
+      <Screen
+        name="AnimatedStyles"
+        component={AnimatedStylesScreen}
+        options={{tabBarLabel: 'Animated Styles'}}
+      />
+      <Screen
+        name="AnimatedProps"
+        component={AnimatedPropsScreen}
+        options={{tabBarLabel: 'Animated Props'}}
+      />
+      <Screen
+        name="Modifiers"
+        component={ModifiersScreen}
+        options={{tabBarLabel: 'Modifiers'}}
+      />
+      <Screen
+        name="Gestures"
+        component={GesturesScreen}
+        options={{tabBarLabel: 'Gestures'}}
+      />
     </Navigator>
   );
 };

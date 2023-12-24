@@ -1,13 +1,15 @@
 import {ReactNode, useMemo} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, ViewStyle} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {MD3Colors} from 'react-native-paper';
 
 const DEFAULT_PADDING = 16;
 export const ScreenWrapper = ({
   children,
+  extraStyles,
 }: {
   children: ReactNode | ReactNode[];
+  extraStyles?: ViewStyle;
 }) => {
   const {top, bottom, left, right} = useSafeAreaInsets();
   const wrapper = useMemo(
@@ -21,7 +23,7 @@ export const ScreenWrapper = ({
     [top, bottom, left, right],
   );
 
-  return <View style={wrapper}>{children}</View>;
+  return <View style={[wrapper, extraStyles]}>{children}</View>;
 };
 
 const styles = StyleSheet.create({

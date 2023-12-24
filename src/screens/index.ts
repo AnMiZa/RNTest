@@ -1,2 +1,2 @@
 export * from './HomeScreen';
-export * from './AnimationsScreen';
+export * from './AnimationsStack';

@@ -4,7 +4,7 @@ import {
 } from 'react-native-paper/react-navigation';
 import {AnimationsStack, HomeStack} from '@navigators';
 import {Icon, MD3Colors} from 'react-native-paper';
-import {HomeScreen} from '@screens';
+import {CustomNavigationBar} from '@components';
 
 const {Navigator, Screen} = createMaterialBottomTabNavigator();
 
@@ -34,7 +34,7 @@ const bottomTabBarOptions: Record<
 
 export const BottomTabNavigator = () => {
   return (
-    <Navigator>
+    <Navigator initialRouteName="Animations">
       <Screen
         name="Home"
         component={HomeStack}

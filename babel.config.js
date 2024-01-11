@@ -21,6 +21,7 @@ module.exports = function (api) {
             '@navigators': './src/navigators',
             '@providers': './src/providers',
             '@components': './src/components',
+            '@constants': './src/constants',
           },
         },
       ],

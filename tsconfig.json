@@ -12,6 +12,7 @@
       "@navigators": ["navigators/index"],
       "@providers": ["providers/index"],
       "@components": ["components/index"],
+      "@constants": ["constants/index"],
     }
   }
 }

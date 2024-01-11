@@ -2,6 +2,7 @@ import {
   AnimatedPropsScreen,
   AnimatedStylesScreen,
   AnimationsScreen,
+  CircularProgressIndicatorScreen,
   ModifiersScreen,
 } from '@screens';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -19,6 +20,11 @@ export const AnimationsStack = () => {
         name="AnimationsScreen"
         component={AnimationsScreen}
         options={{tabBarLabel: 'Home'}}
+      />
+      <Screen
+        name="CircularProgressIndicatorScreen"
+        component={CircularProgressIndicatorScreen}
+        options={{tabBarLabel: 'Circular Progress Indicator'}}
       />
       <Screen
         name="AnimatedStyles"

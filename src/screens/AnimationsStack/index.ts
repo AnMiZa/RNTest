@@ -4,3 +4,4 @@ export * from './AnimatedStylesScreen';
 export * from './AnimatedPropsScreen';
 export * from './ModifiersScreen';
 export * from './CircularProgressIndicatorScreen';
+export * from './GridMagnificationScreen';

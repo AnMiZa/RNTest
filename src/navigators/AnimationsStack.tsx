@@ -3,6 +3,7 @@ import {
   AnimatedStylesScreen,
   AnimationsScreen,
   CircularProgressIndicatorScreen,
+  GridMagnificationScreen,
   ModifiersScreen,
 } from '@screens';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -15,11 +16,17 @@ export const AnimationsStack = () => {
       screenOptions={{
         tabBarItemStyle: {width: 100},
         tabBarScrollEnabled: true,
+        swipeEnabled: false,
       }}>
       <Screen
         name="AnimationsScreen"
         component={AnimationsScreen}
         options={{tabBarLabel: 'Home'}}
+      />
+      <Screen
+        name="GridMagnificationScreen"
+        component={GridMagnificationScreen}
+        options={{tabBarLabel: 'Grid Magnification Screen'}}
       />
       <Screen
         name="CircularProgressIndicatorScreen"

@@ -1,12 +1,13 @@
 import {FC} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {ReText} from 'react-native-redash';
-import {Circle, Svg} from 'react-native-svg';
 import Animated, {
   SharedValue,
   useAnimatedProps,
   useDerivedValue,
 } from 'react-native-reanimated';
+import {ReText} from 'react-native-redash';
+import {Circle, Svg} from 'react-native-svg';
+
 import {theme, useAppTheme} from '@constants';
 
 const CIRCLE_LENGTH = 500;

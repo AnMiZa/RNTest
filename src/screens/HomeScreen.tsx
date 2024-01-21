@@ -1,4 +1,5 @@
 import {Text} from 'react-native-paper';
+
 import {ScreenWrapper} from '@components';
 
 export const HomeScreen = () => {

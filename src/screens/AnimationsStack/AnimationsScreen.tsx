@@ -1,22 +1,22 @@
+import {FC, useCallback} from 'react';
+import {Platform, useWindowDimensions} from 'react-native';
 import {
-  Canvas,
-  LinearGradient,
-  Rect,
-  vec,
-  Text,
-  useFont,
-  matchFont,
-} from '@shopify/react-native-skia';
-import {Platform, StyleSheet, useWindowDimensions} from 'react-native';
-import {
-  cancelAnimation,
   useDerivedValue,
   useSharedValue,
   withRepeat,
   withTiming,
 } from 'react-native-reanimated';
+
+import {AnimationsScreenProps} from '@navigators';
 import {useFocusEffect} from '@react-navigation/native';
-import {useCallback} from 'react';
+import {
+  Canvas,
+  LinearGradient,
+  Rect,
+  Text,
+  matchFont,
+  vec,
+} from '@shopify/react-native-skia';
 
 const getRandomColor = () => {
   const r = Math.floor(Math.random() * 256);
@@ -27,7 +27,10 @@ const getRandomColor = () => {
 
 const CHANGE_DURATION = 2000;
 
-const fontFamily = Platform.select({ios: 'Helvetica', default: 'serif'});
+const fontFamily = Platform.select({
+  ios: 'Helvetica',
+  default: 'serif',
+});
 const fontStyle = {
   fontFamily,
   fontSize: 20,
@@ -37,7 +40,7 @@ const font = matchFont(fontStyle);
 const title = 'This is testing field for Animations';
 const {width: titleWidth} = font.measureText(title);
 
-export const AnimationsScreen = () => {
+export const AnimationsScreen: FC<AnimationsScreenProps> = () => {
   const {width, height} = useWindowDimensions();
 
   const leftColor = useSharedValue('red');
@@ -67,7 +70,11 @@ export const AnimationsScreen = () => {
 
   return (
     <>
-      <Canvas style={{width, height}}>
+      <Canvas
+        style={{
+          width,
+          height,
+        }}>
         <Rect x={0} y={0} width={width} height={height}>
           <LinearGradient
             start={vec(0, 0)}

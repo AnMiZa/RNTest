@@ -1,3 +1,6 @@
+import {FC} from 'react';
+import {StyleSheet} from 'react-native';
+import {Button} from 'react-native-paper';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -5,11 +8,11 @@ import Animated, {
   withSequence,
   withTiming,
 } from 'react-native-reanimated';
-import {StyleSheet} from 'react-native';
-import {Button} from 'react-native-paper';
-import {ScreenWrapper} from '@components';
 
-export const ModifiersScreen = () => {
+import {ScreenWrapper} from '@components';
+import {ModifiersScreenProps} from '@navigators';
+
+export const ModifiersScreen: FC<ModifiersScreenProps> = () => {
   const offset = useSharedValue(0);
 
   const animatedStyles = useAnimatedStyle(() => ({

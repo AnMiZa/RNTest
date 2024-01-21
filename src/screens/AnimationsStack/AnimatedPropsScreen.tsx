@@ -1,16 +1,19 @@
+import {FC} from 'react';
+import {StyleSheet} from 'react-native';
+import {Button} from 'react-native-paper';
 import Animated, {
   useAnimatedProps,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
 import {Circle, Svg} from 'react-native-svg';
-import {Button} from 'react-native-paper';
-import {StyleSheet} from 'react-native';
+
 import {ScreenWrapper} from '@components';
+import {AnimatedPropsScreenProps} from '@navigators';
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
-export const AnimatedPropsScreen = () => {
+export const AnimatedPropsScreen: FC<AnimatedPropsScreenProps> = () => {
   const r = useSharedValue(20);
 
   const handlePress = () => {

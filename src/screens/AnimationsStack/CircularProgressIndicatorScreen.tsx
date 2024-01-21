@@ -1,18 +1,22 @@
-import {CircularProgressIndicator, ScreenWrapper} from '@components';
+import {FC, useCallback} from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
-import {useCallback} from 'react';
 import Animated, {
   cancelAnimation,
   useDerivedValue,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-import {useFocusEffect} from '@react-navigation/native';
-import {theme} from '@constants';
 import {ReText} from 'react-native-redash';
 
+import {CircularProgressIndicator, ScreenWrapper} from '@components';
+import {theme} from '@constants';
+import {CircularProgressIndicatorScreenProps} from '@navigators';
+import {useFocusEffect} from '@react-navigation/native';
+
 Animated.addWhitelistedNativeProps({text: true});
-export const CircularProgressIndicatorScreen = () => {
+export const CircularProgressIndicatorScreen: FC<
+  CircularProgressIndicatorScreenProps
+> = () => {
   const progress = useSharedValue(0);
   const buttonText = useDerivedValue(() => {
     if (progress.value > 0) {

@@ -13,6 +13,7 @@
       "@providers": ["providers/index"],
       "@components": ["components/index"],
       "@constants": ["constants/index"],
+      "@native-modules": ["native-modules/index"]
     }
   }
 }

@@ -1,7 +1,7 @@
 import {ReactNode, useMemo} from 'react';
 import {StyleSheet, View, ViewStyle} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {MD3Colors} from 'react-native-paper';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const DEFAULT_PADDING = 16;
 export const ScreenWrapper = ({

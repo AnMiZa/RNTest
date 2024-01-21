@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {RootNavigator} from '@navigators';
 import {Providers} from '@providers';
 

@@ -1,4 +1,5 @@
 import {Dimensions} from 'react-native';
+
 // GridMagnificationRoundedItem
 const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('window');
 

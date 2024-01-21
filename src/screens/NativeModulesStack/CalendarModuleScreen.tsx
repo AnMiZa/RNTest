@@ -1,7 +1,8 @@
 import {FC} from 'react';
 import {Button} from 'react-native-paper';
+
 import {ScreenWrapper} from '@components';
-import {CalendarModule, GeolocationModule} from '@native-modules';
+import {CalendarModule} from '@native-modules';
 
 export const CalendarModuleScreen: FC<any> = () => {
   return (
@@ -13,9 +14,7 @@ export const CalendarModuleScreen: FC<any> = () => {
 
 const CalendarModuleButton = () => {
   const onPress = () => {
-    // CalendarModule.createCalendarEvent('test', 'testLocation', '2024-01-13');
-    // console.log(DEFAULT_EVENT_NAME);
-    GeolocationModule.getLocation(coordinates => console.log(coordinates));
+    CalendarModule.createCalendarEvent('test', 'testLocation', '2024-01-13');
   };
 
   return (

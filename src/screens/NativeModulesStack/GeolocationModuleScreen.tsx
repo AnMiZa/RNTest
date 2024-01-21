@@ -1,6 +1,7 @@
-import {FC, useEffect, useState} from 'react';
+import {FC, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {ActivityIndicator, Button, Text} from 'react-native-paper';
+
 import {ScreenWrapper} from '@components';
 import {Coordinates, GeolocationModule} from '@native-modules';
 

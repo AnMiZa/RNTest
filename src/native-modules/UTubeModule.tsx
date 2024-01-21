@@ -1,11 +1,11 @@
+import React, {FC} from 'react';
 import {
-  requireNativeComponent,
+  DimensionValue,
+  HostComponent,
   Platform,
   View,
-  HostComponent,
-  DimensionValue,
+  requireNativeComponent,
 } from 'react-native';
-import React, {FC} from 'react';
 
 const AndroidView: HostComponent<any> = requireNativeComponent('RNUTubeView');
 

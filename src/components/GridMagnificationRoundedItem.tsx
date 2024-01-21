@@ -1,12 +1,13 @@
 import {FC} from 'react';
-import {Group, RoundedRect} from '@shopify/react-native-skia';
 import {
-  SharedValue,
-  useDerivedValue,
-  interpolate,
   Extrapolation,
+  SharedValue,
+  interpolate,
+  useDerivedValue,
 } from 'react-native-reanimated';
+
 import {CANVAS_HEIGHT, CANVAS_WIDTH, MAX_DISTANCE} from '@constants';
+import {Group, RoundedRect} from '@shopify/react-native-skia';
 
 type GridMagnificationRoundedItem = {
   x: number;

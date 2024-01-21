@@ -1,15 +1,18 @@
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {
   AnimatedPropsScreen,
   AnimatedStylesScreen,
   AnimationsScreen,
   CircularProgressIndicatorScreen,
+  GesturesScreen,
   GridMagnificationScreen,
   ModifiersScreen,
 } from '@screens';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {GesturesScreen} from '@screens';
 
-const {Navigator, Screen} = createMaterialTopTabNavigator();
+import {AnimationsStackParamsList} from '.';
+
+const {Navigator, Screen} =
+  createMaterialTopTabNavigator<AnimationsStackParamsList>();
 export const AnimationsStack = () => {
   return (
     <Navigator
@@ -34,22 +37,22 @@ export const AnimationsStack = () => {
         options={{tabBarLabel: 'Circular Progress Indicator'}}
       />
       <Screen
-        name="AnimatedStyles"
+        name="AnimatedStylesScreen"
         component={AnimatedStylesScreen}
         options={{tabBarLabel: 'Animated Styles'}}
       />
       <Screen
-        name="AnimatedProps"
+        name="AnimatedPropsScreen"
         component={AnimatedPropsScreen}
         options={{tabBarLabel: 'Animated Props'}}
       />
       <Screen
-        name="Modifiers"
+        name="ModifiersScreen"
         component={ModifiersScreen}
         options={{tabBarLabel: 'Modifiers'}}
       />
       <Screen
-        name="Gestures"
+        name="GesturesScreen"
         component={GesturesScreen}
         options={{tabBarLabel: 'Gestures'}}
       />

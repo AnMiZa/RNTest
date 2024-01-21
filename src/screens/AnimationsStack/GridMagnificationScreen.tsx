@@ -1,36 +1,24 @@
+import {FC} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Canvas, Group, SweepGradient, vec} from '@shopify/react-native-skia';
-import {GridMagnificationRoundedItem} from '@components';
+import {Gesture, GestureDetector} from 'react-native-gesture-handler';
 import {useSharedValue, withTiming} from 'react-native-reanimated';
+
+import {GridMagnificationRoundedItem} from '@components';
 import {
   CANVAS_HEIGHT,
   CANVAS_WIDTH,
   PADDING,
-  SQUARE_CONTAINER_SIZE,
-  SQUARE_SIZE,
   SQUARES_AMOUNT_HORIZONTAL,
   SQUARES_AMOUNT_VERTICAL,
+  SQUARE_CONTAINER_SIZE,
+  SQUARE_SIZE,
 } from '@constants';
-import {Gesture, GestureDetector} from 'react-native-gesture-handler';
+import {GridMagnificationScreenProps} from '@navigators';
+import {Canvas, Group, SweepGradient, vec} from '@shopify/react-native-skia';
 
-export const GridMagnificationScreen = () => {
+export const GridMagnificationScreen: FC<GridMagnificationScreenProps> = () => {
   const touchedPoint = useSharedValue<{x: number; y: number} | null>(null);
   const progress = useSharedValue(0);
-  // const touchHandler = useTouchHandler({
-  //   onStart: event => {
-  //     progress.value = withTiming(1, {duration: 300});
-  //     touchedPoint.value = {x: event.x, y: event.y};
-  //   },
-  //   onActive: event => {
-  //     touchedPoint.value = {x: event.x, y: event.y};
-  //     console.log({x: event.x, y: event.y});
-  //   },
-  //   onEnd: () => {
-  //     progress.value = withTiming(0, {duration: 300}, () => {
-  //       touchedPoint.value = null;
-  //     });
-  //   },
-  // });
 
   const tap = Gesture.Pan()
     .onBegin(event => {

@@ -1,13 +1,16 @@
+import {FC} from 'react';
+import {StyleSheet, View} from 'react-native';
+import {Button} from 'react-native-paper';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
-import {StyleSheet, View} from 'react-native';
-import {Button} from 'react-native-paper';
-import {ScreenWrapper} from '@components';
 
-export const AnimatedStylesScreen = () => {
+import {ScreenWrapper} from '@components';
+import {AnimatedStylesScreenProps} from '@navigators';
+
+export const AnimatedStylesScreen: FC<AnimatedStylesScreenProps> = () => {
   const translateX = useSharedValue(0);
 
   const handlePress = () => {

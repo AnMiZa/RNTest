@@ -1,15 +1,15 @@
-import {
-  createMaterialBottomTabNavigator,
-  MaterialBottomTabNavigationOptions,
-} from 'react-native-paper/react-navigation';
-import {AnimationsStack, HomeStack} from '@navigators';
 import {Icon, MD3Colors} from 'react-native-paper';
-import {CustomNavigationBar} from '@components';
+import {
+  MaterialBottomTabNavigationOptions,
+  createMaterialBottomTabNavigator,
+} from 'react-native-paper/react-navigation';
+
+import {AnimationsStack, HomeStack, NativeModulesStack, TestStack} from '.';
 
 const {Navigator, Screen} = createMaterialBottomTabNavigator();
 
 const bottomTabBarOptions: Record<
-  'home' | 'animations',
+  'home' | 'animations' | 'nativeModules' | 'test',
   MaterialBottomTabNavigationOptions
 > = {
   home: {
@@ -30,6 +30,24 @@ const bottomTabBarOptions: Record<
       />
     ),
   },
+  nativeModules: {
+    tabBarIcon: ({focused}) => (
+      <Icon
+        source="view-module"
+        color={focused ? MD3Colors.error50 : MD3Colors.error20}
+        size={25}
+      />
+    ),
+  },
+  test: {
+    tabBarIcon: ({focused}) => (
+      <Icon
+        source="test-tube"
+        color={focused ? MD3Colors.error50 : MD3Colors.error20}
+        size={25}
+      />
+    ),
+  },
 };
 
 export const BottomTabNavigator = () => {
@@ -44,6 +62,16 @@ export const BottomTabNavigator = () => {
         name="Animations"
         component={AnimationsStack}
         options={bottomTabBarOptions.animations}
+      />
+      <Screen
+        name="NativeModules"
+        component={NativeModulesStack}
+        options={bottomTabBarOptions.nativeModules}
+      />
+      <Screen
+        name="Test"
+        component={TestStack}
+        options={bottomTabBarOptions.test}
       />
     </Navigator>
   );

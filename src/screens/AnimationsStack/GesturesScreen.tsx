@@ -1,15 +1,18 @@
+import {FC} from 'react';
+import {LayoutChangeEvent, StyleSheet, View} from 'react-native';
+import {Gesture, GestureDetector} from 'react-native-gesture-handler';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withDecay,
   withTiming,
 } from 'react-native-reanimated';
-import {Gesture, GestureDetector} from 'react-native-gesture-handler';
-import {LayoutChangeEvent, StyleSheet, View} from 'react-native';
+
+import {GesturesScreenProps} from '@navigators';
 
 const SIZE = 120;
 
-export const GesturesScreen = () => {
+export const GesturesScreen: FC<GesturesScreenProps> = () => {
   const pressed = useSharedValue(false);
   const offsetX = useSharedValue(0);
   const width = useSharedValue(0);

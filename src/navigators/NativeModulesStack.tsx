@@ -1,10 +1,9 @@
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {
   CalendarModuleScreen,
   GeolocationModuleScreen,
   UTubeModuleScreen,
 } from '@screens';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {GeolocationModule} from '@native-modules';
 
 const {Navigator, Screen} = createMaterialTopTabNavigator();
 export const NativeModulesStack = () => {

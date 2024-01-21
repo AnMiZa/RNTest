@@ -22,6 +22,7 @@ module.exports = function (api) {
             '@providers': './src/providers',
             '@components': './src/components',
             '@constants': './src/constants',
+            '@native-modules': './src/native-modules',
           },
         },
       ],

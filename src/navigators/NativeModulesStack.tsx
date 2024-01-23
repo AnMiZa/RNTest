@@ -5,7 +5,10 @@ import {
   UTubeModuleScreen,
 } from '@screens';
 
-const {Navigator, Screen} = createMaterialTopTabNavigator();
+import {NativeModulesStackParamsList} from '.';
+
+const {Navigator, Screen} =
+  createMaterialTopTabNavigator<NativeModulesStackParamsList>();
 export const NativeModulesStack = () => {
   return (
     <Navigator

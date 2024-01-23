@@ -3,8 +3,9 @@ import {Button} from 'react-native-paper';
 
 import {ScreenWrapper} from '@components';
 import {CalendarModule} from '@native-modules';
+import {CalendarModuleScreenProps} from '@navigators';
 
-export const CalendarModuleScreen: FC<any> = () => {
+export const CalendarModuleScreen: FC<CalendarModuleScreenProps> = () => {
   return (
     <ScreenWrapper>
       <CalendarModuleButton />

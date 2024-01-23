@@ -4,8 +4,9 @@ import {ActivityIndicator, Button, Text} from 'react-native-paper';
 
 import {ScreenWrapper} from '@components';
 import {Coordinates, GeolocationModule} from '@native-modules';
+import {GeolocationModuleScreenProps} from '@navigators';
 
-export const GeolocationModuleScreen: FC = () => {
+export const GeolocationModuleScreen: FC<GeolocationModuleScreenProps> = () => {
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);

@@ -1,5 +1,16 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
+// Home Stack
+
+export type HomeStackParamsList = {
+  HomeScreen: undefined;
+};
+
+export type HomeScreenProps = NativeStackScreenProps<
+  HomeStackParamsList,
+  'HomeScreen'
+>;
+
 // AnimationsStack
 
 export type AnimationsStackParamsList = {
@@ -39,4 +50,36 @@ export type ModifiersScreenProps = NativeStackScreenProps<
 export type GesturesScreenProps = NativeStackScreenProps<
   AnimationsStackParamsList,
   'GesturesScreen'
+>;
+
+// Native Modules Stack
+
+export type NativeModulesStackParamsList = {
+  CalendarModuleScreen: undefined;
+  UTubeModuleScreen: undefined;
+  GeolocationModuleScreen: undefined;
+};
+
+export type CalendarModuleScreenProps = NativeStackScreenProps<
+  NativeModulesStackParamsList,
+  'CalendarModuleScreen'
+>;
+export type UTubeModuleScreenProps = NativeStackScreenProps<
+  NativeModulesStackParamsList,
+  'UTubeModuleScreen'
+>;
+export type GeolocationModuleScreenProps = NativeStackScreenProps<
+  NativeModulesStackParamsList,
+  'GeolocationModuleScreen'
+>;
+
+// Test Stack
+
+export type TestStackParamsList = {
+  TestRendererScreen: undefined;
+};
+
+export type TestRendererScreenProps = NativeStackScreenProps<
+  TestStackParamsList,
+  'TestRendererScreen'
 >;

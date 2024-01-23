@@ -52,7 +52,7 @@ const bottomTabBarOptions: Record<
 
 export const BottomTabNavigator = () => {
   return (
-    <Navigator initialRouteName="Animations">
+    <Navigator initialRouteName="Test">
       <Screen
         name="Home"
         component={HomeStack}

@@ -1,5 +1,7 @@
 import {FC} from 'react';
 
-export const TestRendererScreen: FC<any> = () => {
+import {TestRendererScreenProps} from '@navigators';
+
+export const TestRendererScreen: FC<TestRendererScreenProps> = () => {
   return null;
 };
